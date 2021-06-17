@@ -44,6 +44,23 @@ venv\Scripts\activate
 ```
 source venv/bin/activate
 ```
+## Desactiver votre environement virtuel
+
+- Pour windows
+```
+deactivate
+```
+
+- Pour Mac
+```
+deactivate
+```
+
+- Pour Linux
+```
+deactivate
+```
+
 ## Installer Django
 ```
 pip install django
@@ -64,4 +81,25 @@ django-admin startproject mon_project
 mon_project/manage.py runserver
 ```
 
-Bravo 🎉
+Bravo 🎉 <br><br>
+
+## Ajout d'un modèle dans models.py
+```
+class Produit(models.Model):
+    name = models.CharField(max_length=200, unique=True)
+    number = models.IntegerField()
+    description = models.TextField()
+    image = models.ImageField(upload_to="clb_service")
+    status = models.BooleanField(default=False)
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_upd = models.DateTimeField(auto_now=True)
+```
+## Création du fichier de migration
+```
+python manage.py makemigrations
+```
+
+## Exécution des migrations
+```
+python manage.py migrate
+```

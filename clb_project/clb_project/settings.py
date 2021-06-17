@@ -24,9 +24,15 @@ SECRET_KEY = 'django-insecure-t3$g1pum9g4683g7tjf*xjsb4_)eb!kr7f4&uo76po=6#su=yb
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
+ADMINS = (
+    ('yaya hc', 'hamedcuenca5@gmail.com')
+)
+
+APPEND_SLASH = True # Ajoute un slash en fin d'URL
 
 # Application definition
 
@@ -37,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'clb_service',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +82,12 @@ WSGI_APPLICATION = 'clb_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql', 
+        'NAME': 'clb',
+        'USER': 'yayahamedcoulibaly',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '5432',
     }
 }
 
