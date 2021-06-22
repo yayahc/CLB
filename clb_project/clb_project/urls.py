@@ -20,5 +20,5 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("clb/", include("clb_service.urls")),
+    # path("clb/", include("clb_service.urls")),
 ]

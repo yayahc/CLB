@@ -28,10 +28,6 @@ TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
-ADMINS = (
-    ('yaya hc', 'hamedcuenca5@gmail.com')
-)
-
 APPEND_SLASH = True # Ajoute un slash en fin d'URL
 
 # Application definition
@@ -43,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'clb_service',
 ]
 
 MIDDLEWARE = [
@@ -82,12 +77,7 @@ WSGI_APPLICATION = 'clb_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': 'clb',
-        'USER': 'yayahamedcoulibaly',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3', 
     }
 }
 
