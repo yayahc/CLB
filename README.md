@@ -3,81 +3,81 @@
 <br>
 
 ## Créer un nouveau projet
-```
+```bash
 mkdir mon_projet
 ```
 
 ## Ouvrir son projet
-```
+```zsh
 cd mon_projet
 ```
 
 ## Créer un environement virtuel
 
 - Pour windows
-```
+```bash
 virtualenv venv
 ```
 
 - Pour Mac
-```
+```zsh
 python3 -m venv venv
 ```
 
 - Pour Linux
-```
+```bash
 virtualenv venv
 ```
 ## Activer votre environement virtuel
 
 - Pour windows
-```
+```bash
 venv\Scripts\activate
 ```
 
 - Pour Mac
-```
+```zsh
 .source venv/bin/activate
 ```
 
 - Pour Linux
-```
+```bash
 source venv/bin/activate
 ```
 ## Desactiver votre environement virtuel
 
 - Pour windows
-```
+```bash
 deactivate
 ```
 
 - Pour Mac
-```
+```zsh
 deactivate
 ```
 
 - Pour Linux
-```
+```bash
 deactivate
 ```
 
 ## Installer Django
-```
+```python
 pip install django
 ```
 
 ## Verifier que Django est bien installer
-```
+```python
 python -m django --version
 ```
 
 ## Créer un projet Django
-```
+```python
 django-admin startproject mon_project
 ```
 
 ## Lancez le serveur de Django
-```
+```python
 mon_project/manage.py runserver
 ```
 
@@ -102,7 +102,7 @@ class my_model(models.Model):
 ```
 
 ## Exécuter les migrations
-```
+```python
 python manage.py migrate
 ```
 
@@ -120,7 +120,7 @@ INSTALLED_APPS = [
 ```
 
 ## Créer un fichier de migration
-```
+```python
 python manage.py makemigrations mon_app
 
 python manage.py sqlmigrate mon_app 0001
