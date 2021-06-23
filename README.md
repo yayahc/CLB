@@ -101,6 +101,12 @@ class my_model(models.Model):
     description = models.TextField()
 ```
 
+## Installer Pillow pour utiliser <ImageField>
+```python
+python -m pip install pillow
+```
+
+
 ## Exécuter les migrations
 ```python
 python manage.py migrate
@@ -179,3 +185,7 @@ urlpatterns = [
 ]
 
 ```
+
+Go 👌
+
+Documentation Officielle : https://docs.djangoproject.com/en/3.2/intro/
