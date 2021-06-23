@@ -2,18 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-class Categorie(models.Model):
-    name = models.CharField(max_length=200, unique=True)
-
-    class Meta:
-        """Meta definition for Categorie."""
-
-        verbose_name = "Categorie"
-        verbose_name_plural = "Categorie"
-
-    def __str__(self):
-        return self.name
-
 
 class Album(models.Model):
     name = models.CharField(max_length=200, unique=True)
@@ -29,6 +17,19 @@ class Album(models.Model):
 
         verbose_name = "Album"
         verbose_name_plural = "Album"
+
+    def __str__(self):
+        return self.name
+
+class Categorie(models.Model):
+    name = models.CharField(max_length=200, unique=True)
+    # produit = models.ForeignKey(Produit, on_delete=models.CASCADE, null=True)
+
+    class Meta:
+        """Meta definition for Categorie."""
+
+        verbose_name = "Categorie"
+        verbose_name_plural = "Categorie"
 
     def __str__(self):
         return self.name
