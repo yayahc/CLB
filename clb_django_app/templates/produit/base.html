@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}clb{% endblock %}</title>
+	<meta name="vewport" content="width=device-width, initial-scale=1">
+	<link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+	<link href="{% static "css/main.css" %}" rel="stylesheet">
+	<script scr="{% static "bootstrap/js/bootstrap.bundle.min.js" %}"crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="categories">
+		<ul>Categories
+			{% for c in categories %}
+			<li>
+				<a href=""> {{ c.name|title }} </a>
+			</li>
+			{% endfor %}			
+		</ul>
+
+	</div>
+	<div class="content" id="content">{% block content %}{% endblock %}</div>
+</body>
+</html>
