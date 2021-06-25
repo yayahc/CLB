@@ -1,0 +1,14 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="cont">
+	<img src="{{ produit.image.image1.url }}">
+	<h2>{{ produit.name }}</h2>
+	<p>vendu par : {{ produit.sold_by }}</p>
+	<p>description : {{ produit.description|slice:":355" }}</p>
+	<p>prix :$ {{ produit.price }}</p>
+</div>
+
+{% endblock %}

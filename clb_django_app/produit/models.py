@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -19,11 +20,11 @@ class Vendeur(models.Model):
 
 class Album(models.Model):
     name = models.CharField(max_length=200, unique=True)
-    image1 = models.ImageField(upload_to="produit/media", height_field=None, width_field=None)
-    image2 = models.ImageField(upload_to="produit/media", height_field=None, width_field=None)
-    image3 = models.ImageField(upload_to="produit/media", height_field=None, width_field=None)
-    image4 = models.ImageField(upload_to="produit/media", height_field=None, width_field=None)
-    image5 = models.ImageField(upload_to="produit/media", height_field=None, width_field=None)
+    image1 = models.ImageField(upload_to="images/", height_field=None, width_field=None)
+    image2 = models.ImageField(upload_to="images/", height_field=None, width_field=None)
+    image3 = models.ImageField(upload_to="images/", height_field=None, width_field=None)
+    image4 = models.ImageField(upload_to="images/", height_field=None, width_field=None)
+    image5 = models.ImageField(upload_to="images/", height_field=None, width_field=None)
 
     class Meta:
         """Meta definition for Album."""
@@ -36,6 +37,7 @@ class Album(models.Model):
 
 class Categorie(models.Model):
     name = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, null=True)
     # produit = models.ForeignKey(Produit, on_delete=models.CASCADE, null=True)
 
     class Meta:
@@ -44,12 +46,16 @@ class Categorie(models.Model):
         verbose_name = "Categorie"
         verbose_name_plural = "Categorie"
 
+    # def get_absolute_url(self):
+    #     return reverse('produit:categorie_list', args=[self.slug])
+
     def __str__(self):
         return self.name
 
 
 class Produit(models.Model):
     name = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200)
     categorie = models.ForeignKey(Categorie,related_name='produit', on_delete=models.CASCADE, null=True)
     sold_by = models.ForeignKey(Vendeur,related_name='vendeur_produit' ,on_delete=models.CASCADE, null=True)
     in_stock = models.BooleanField(default=True)
@@ -66,6 +72,8 @@ class Produit(models.Model):
         verbose_name = "Produit"
         verbose_name_plural = "Produit"
         ordering = ('-pub_date',)
+    def get_absolute_url(self):
+        return reverse('produit:detail', args=[self.slug])
 
     def __str__(self):
         return self.name
