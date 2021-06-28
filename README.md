@@ -1,4 +1,6 @@
-# Django Starter (cheat code)
+# Backend Gerer en django + Bonnus Cours Django Starter
+
+## Django Starter (cheat code)
 
 <br>
 
