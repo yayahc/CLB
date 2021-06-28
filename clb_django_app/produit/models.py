@@ -65,6 +65,7 @@ class Produit(models.Model):
     number = models.IntegerField(default=1)
     price = models.IntegerField(default=0)
     description = models.TextField(blank=True)
+    in_home = models.BooleanField(default=False)
 
     class Meta:
         """Meta definition Produit."""

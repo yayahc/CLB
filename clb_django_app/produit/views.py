@@ -11,7 +11,7 @@ def categories(request):
     }
 
 def home(request):
-    produit = Produit.objects.all()
+    produit = Produit.objects.filter(in_home=True)
     return render(request, 'produit/home.html', {'produit':produit})
 
 def detail(request, slug):
@@ -21,7 +21,7 @@ def detail(request, slug):
 def categorie_list(request, categorie_slug):
     categorie = get_object_or_404(Categorie, slug=categorie_slug)
     produit = Produit.objects.filter(categorie=categorie)
-    return render(request, 'produit/categorie.html', {'categorie':categorie}, {'produit':produit})
+    return render(request, 'produit/categorie.html', {'produit':produit, 'categorie':categorie})
 
 def achat(request):
     return render(request, 'produit/achat.html')
