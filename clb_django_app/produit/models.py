@@ -63,7 +63,8 @@ class Produit(models.Model):
     date_upd = models.DateTimeField(auto_now=True)
     image = models.ForeignKey(Album, on_delete=models.CASCADE, null=True)
     number = models.IntegerField(default=1)
-    price = models.IntegerField(default=0)
+    old_price = models.IntegerField(default=0)
+    new_price = models.IntegerField(default=0)
     description = models.TextField(blank=True)
     in_home = models.BooleanField(default=False)
 
