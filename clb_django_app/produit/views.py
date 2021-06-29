@@ -12,7 +12,7 @@ def categories(request):
 
 def home(request):
     produit = Produit.objects.filter(in_home=True)
-    return render(request, 'produit/home.html', {'produit':produit})
+    return render(request, 'produit/home-page.html', {'produit':produit})
 
 def detail(request, slug):
     produit = get_object_or_404(Produit, slug=slug, in_stock=True)
