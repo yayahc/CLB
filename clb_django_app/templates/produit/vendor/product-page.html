@@ -1,0 +1,77 @@
+{% extends "../base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <!--Main layout-->
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <img style="height: 400px" src="{{ produit.image.image1.url }}" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+          <!--Content-->
+          <div class="p-4">
+
+            <div class="mb-3">
+              <a href="">
+                <span class="badge red mr-1">{{ produit.categorie.name }}</span>
+              </a>
+            </div>
+
+            <p class="lead">
+              <span  class="mr-1">
+                <del>{{ produit.old_price }} FCFA</del>
+              </span>
+              <span>{{ produit.new_price }} FCFA</span>
+            </p>      
+            <div style="background-color: #5462c7 !important;color: white; ;border-radius: 5px; padding: 1rem;" class="vd">
+            <p>Vendeur : {{ produit.sold_by }}</p>
+            <p>Contact : {{ produit.sold_by.contact }}</p>
+            <p>Whatsap : {{ produit.sold_by.whatsap }}</p>
+            <p>Lieu : {{ produit.sold_by.lieu }}</p>              
+            </div>
+            <br>
+            <p class="lead font-weight-bold">Description</p>
+
+            <p>{{ produit.description|slice:":355" }}</p>
+
+          </div>
+          <!--Content-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div style="justify-content: center; align-items: center;" class="col-lg-4 col-md-12 mb-4">
+
+          <img src="{{ produit.image.image2.url }}" alt="">
+          <img src="{{ produit.image.image3.url }}" alt="">
+          <img src="{{ produit.image.image4.url }}" alt="">
+
+        </div>
+
+      </div>
+      <!--Grid row-->
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  {% endblock %}

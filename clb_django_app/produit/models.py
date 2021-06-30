@@ -6,7 +6,8 @@ from django.urls import reverse
 
 class Vendeur(models.Model):
     name = models.CharField(max_length=200)
-    contact = models.IntegerField()
+    contact = models.CharField(max_length=200)
+    whatsap = models.CharField(max_length=200, null=True)
     lieu = models.CharField(max_length=200, unique=True)
 
     class Meta:
@@ -63,10 +64,10 @@ class Produit(models.Model):
     date_upd = models.DateTimeField(auto_now=True)
     image = models.ForeignKey(Album, on_delete=models.CASCADE, null=True)
     number = models.IntegerField(default=1)
-    old_price = models.IntegerField(default=0)
-    new_price = models.IntegerField(default=0)
+    old_price = models.CharField(default=0, max_length=200)
+    new_price = models.CharField(max_length=200)
     description = models.TextField(blank=True)
-    in_home = models.BooleanField(default=False)
+    in_home = models.BooleanField(default=True)
 
     class Meta:
         """Meta definition Produit."""
