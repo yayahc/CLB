@@ -21,7 +21,7 @@ def detail(request, slug):
 def categorie_list(request, categorie_slug):
     categorie = get_object_or_404(Categorie, slug=categorie_slug)
     produit = Produit.objects.filter(categorie=categorie)
-    return render(request, 'produit/categorie.html', {'produit':produit, 'categorie':categorie})
+    return render(request, 'produit/vendor/categorie.html', {'produit':produit, 'categorie':categorie})
 
 def achat(request):
     return render(request, 'produit/achat.html')

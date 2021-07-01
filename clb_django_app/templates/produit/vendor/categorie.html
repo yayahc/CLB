@@ -4,6 +4,7 @@
 
 {% block content %}
 
+  </div>
   <!--/.Carousel Wrapper-->
 
   <!--Main layout-->
@@ -13,14 +14,14 @@
       
 
       <!--Section: Products v.3-->
-      <section class="text-center mb-4">
+      <section class="text-center mb-4 mt-4">
 
         <!--Grid row-->
         <div class="row wow fadeIn">
 
   {% for p in produit %}
           <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="col-lg-3 col-md-6 mb-4 mt-4">
             <!--Card-->
             <div class="card">
               <!--Card image-->
@@ -51,7 +52,7 @@
                         En stock
                     </span>
                       {% else %}
-                      <a href="#" class="dark-grey-text">{{ p.name }}
+                      <a href="" class="dark-grey-text">{{ p.name }}
                     </a><br>
                       <span class="badge badge-pill danger-color">          
                       Vendu
