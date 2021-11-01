@@ -21,11 +21,11 @@ class Vendeur(models.Model):
 
 class Album(models.Model):
     name = models.CharField(max_length=200, unique=True)
-    image1 = models.ImageField(upload_to="images/", height_field=None, width_field=None)
-    image2 = models.ImageField(upload_to="images/", height_field=None, width_field=None)
-    image3 = models.ImageField(upload_to="images/", height_field=None, width_field=None)
-    image4 = models.ImageField(upload_to="images/", height_field=None, width_field=None)
-    image5 = models.ImageField(upload_to="images/", height_field=None, width_field=None)
+    image1 = models.ImageField(upload_to="images/", height_field=None, width_field=None, null=True)
+    image2 = models.ImageField(upload_to="images/", height_field=None, width_field=None, null=True)
+    image3 = models.ImageField(upload_to="images/", height_field=None, width_field=None, null=True)
+    image4 = models.ImageField(upload_to="images/", height_field=None, width_field=None, null=True)
+    image5 = models.ImageField(upload_to="images/", height_field=None, width_field=None, null=True)
 
     class Meta:
         """Meta definition for Album."""
