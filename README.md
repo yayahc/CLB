@@ -18,7 +18,7 @@ cd mon_projet
 
 - Pour windows
 ```bash
-virtualenv venv
+python -m virtualenv venv
 ```
 
 - Pour Mac
