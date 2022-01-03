@@ -161,7 +161,7 @@ from .models import my_model
 admin.site.register(my_model)
 ```
 
-## Creér une vue
+## Creér une vue dans views
 ```python
 def my_app(request):
     latest_object_list = my_app.objects.order_by('-pub_date')[:5]
