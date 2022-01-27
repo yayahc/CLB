@@ -1,96 +1,96 @@
-# Backend du projet gerer en Django + Bonnus Cours Django Starter
+# Backend with Django + Bonus
 
-## Django Starter (cheat code)
+## Django (cheat code)
 
 <br>
 
-## Créer un nouveau projet
+## Create project folder
 ```bash
-mkdir mon_projet
+mkdir my_projet
 ```
 
-## Ouvrir son projet
+## Open project folder
 ```zsh
-cd mon_projet
+cd my_projet
 ```
 
-## Créer un environement virtuel
+## Create virtualenv
 
-- Pour windows
+- windows
 ```bash
 python -m virtualenv venv
 ```
 
-- Pour Mac
+- Mac
 ```zsh
 python3 -m venv venv
 ```
 
-- Pour Linux
+- Linux
 ```bash
 virtualenv venv
 ```
-## Activer votre environement virtuel
+## Activate virtualenv
 
-- Pour windows
+- windows
 ```bash
 venv\Scripts\activate
 ```
 
-- Pour Mac
+- Mac
 ```zsh
 .source venv/bin/activate
 ```
 
-- Pour Linux
+- Linux
 ```bash
 source venv/bin/activate
 ```
-## Desactiver votre environement virtuel
+## Deactivate virtualenv
 
-- Pour windows
+- windows
 ```bash
 deactivate
 ```
 
-- Pour Mac
+- Mac
 ```zsh
 deactivate
 ```
 
-- Pour Linux
+- Linux
 ```bash
 deactivate
 ```
 
-## Installer Django
+## Install Django
 ```python
 pip install django
 ```
 
-## Verifier que Django est bien installer
+## Verify if django is install
 ```python
 python -m django --version
 ```
 
-## Créer un projet Django
+## Create django project
 ```python
 django-admin startproject mon_project
 ```
 
-## Lancez le serveur de Django
+## Run django server
 ```python
 mon_project/manage.py runserver
 ```
 
 Bravo 🎉 <br><br>
 
-## Créer une application Django
+## Create django app
 ```python
 django-admin startapp mon_app
 ```
 
-## Ajout d'un modèle dans mon_app/models.py
+## Add your models on your_app/models.py
 ```python
 class my_model(models.Model):
     name = models.CharField(max_length=200, unique=True)
@@ -103,18 +103,17 @@ class my_model(models.Model):
     description = models.TextField()
 ```
 
-## Installer Pillow pour utiliser <ImageField>
+## Install Pillow to use <ImageField>
 ```python
 python -m pip install pillow
 ```
 
-
-## Exécuter les migrations
+## Do the migrations
 ```python
 python manage.py migrate
 ```
 
-## Ajouter votre app a votre projet Django dans mon_projet/settings.py
+## Add your app in your django project into my_projet/settings.py file
 ```python
 INSTALLED_APPS = [
     'mon_app.apps.Mon_appConfig',
@@ -127,7 +126,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-## Créer un fichier de migration
+## Create migration file
 ```python
 python manage.py makemigrations mon_app
 
@@ -138,7 +137,7 @@ python manage.py migrate
 
 Bingo 🎉 <br><br>
 
-## Créer un utilisateur administrateur
+## Create user admin
 ```python
 python manage.py createsuperuser
 
@@ -150,7 +149,7 @@ Password (again): *********
 
 python manage.py runserver
 ```
-## Afficher un model sur la page d'administration Django
+## Display a model into the admin page
 ```python
 from django.contrib import admin
 
@@ -161,7 +160,7 @@ from .models import my_model
 admin.site.register(my_model)
 ```
 
-## Creér une vue dans views
+## Cceate view in views,py
 ```python
 def my_app(request):
     latest_object_list = my_app.objects.order_by('-pub_date')[:5]
@@ -169,14 +168,14 @@ def my_app(request):
     return HttpResponse(output)
 ```
 
-## Configurer les urls dans my_app/urls.py
+## Set the urls in my_app/urls.py
 ```python
 urlpatterns = [
     path('', views.my_app, name='my_app'),
 ]
 ```
 
-## Configurer les urls dans mon_projet/urls.py
+## Setting urls into my_project/urls.py
 ```python
 from django.contrib import admin
 from django.urls import path, include
@@ -189,4 +188,4 @@ urlpatterns = [
 ```
 
 Go 👌
-Documentation Officielle : https://docs.djangoproject.com/en/3.2/intro/
+Documentation : https://docs.djangoproject.com/en/3.2/intro/
